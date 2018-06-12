@@ -19,7 +19,7 @@ opt <- theme_bw()+
 
 ### local1 ----
 
-wind1 <- read_delim("dados/Eta_HadGEM2-ES_Hist_1960_2005_W100_3h_P1.txt", 
+wind1 <- read_delim("dados_canems/Eta_CanESM2_Hist_1960_2005_W100_3h_P1.txt", 
                     ";", escape_double = FALSE, col_names = FALSE, 
                     trim_ws = TRUE)
 wind1 <- wind1 %>% 
@@ -31,7 +31,7 @@ wind1 <- wind1 %>%
   mutate(group = c("1960 - 2006"))
 
 
-wind2 <- read_delim("dados/Eta_HadGEM2-ES_RCP8.5_2006_2040_W100_3h_P1.txt", 
+wind2 <- read_delim("dados_canems/Eta_CanESM2_RCP8.5_2006_2040_W100_3h_P1.txt", 
                     ";", escape_double = FALSE, col_names = FALSE, 
                     trim_ws = TRUE)
 wind2 <- wind2 %>% 
@@ -43,7 +43,7 @@ wind2 <- wind2 %>%
   mutate(group = c("2006 - 2040"))
 
 
-wind3 <- read_delim("dados/Eta_HadGEM2-ES_RCP8.5_2040_2070_W100_3h_P1.txt", 
+wind3 <- read_delim("dados_canems/Eta_CanESM2_RCP8.5_2040_2070_W100_3h_P1.txt", 
                     ";", escape_double = FALSE, col_names = FALSE, 
                     trim_ws = TRUE)
 wind3 <- wind3 %>% 
@@ -55,7 +55,7 @@ wind3 <- wind3 %>%
   mutate(group = c("2040 - 2070"))
 
 
-wind4 <- read_delim("dados/Eta_HadGEM2-ES_RCP8.5_2070_2099_W100_3h_P1.txt", 
+wind4 <- read_delim("dados_canems/Eta_CanESM2_RCP8.5_2070_2099_W100_3h_P1.txt", 
                     ";", escape_double = FALSE, col_names = FALSE, 
                     trim_ws = TRUE)
 wind4 <- wind4 %>% 
@@ -109,8 +109,8 @@ b <- rweibull(wind_weibull$n[2], shape = wind_weibull$mod_est_shape[2],
               scale = wind_weibull$mod_est_scale[2]) %>% 
   as.data.frame() %>% 
   mutate(group = c("2021 - 2050"))
-  
-  
+
+
 c <- rweibull(wind_weibull$n[3], shape = wind_weibull$mod_est_shape[3], 
               scale = wind_weibull$mod_est_scale[1]) %>% 
   as.data.frame() %>% 
@@ -124,7 +124,7 @@ weibull <- rbind(a,b,c) %>%
 
 ### local2 ----
 
-wind1 <- read_delim("dados/Eta_HadGEM2-ES_Hist_1960_2005_W100_3h_P2.txt", 
+wind1 <- read_delim("dados_canems/Eta_CanESM2_Hist_1960_2005_W100_3h_P2.txt", 
                     ";", escape_double = FALSE, col_names = FALSE, 
                     trim_ws = TRUE)
 wind1 <- wind1 %>% 
@@ -136,7 +136,7 @@ wind1 <- wind1 %>%
   mutate(group = c("1960 - 2006"))
 
 
-wind2 <- read_delim("dados/Eta_HadGEM2-ES_RCP8.5_2006_2040_W100_3h_P2.txt", 
+wind2 <- read_delim("dados_canems/Eta_CanESM2_RCP8.5_2006_2040_W100_3h_P2.txt", 
                     ";", escape_double = FALSE, col_names = FALSE, 
                     trim_ws = TRUE)
 wind2 <- wind2 %>% 
@@ -148,7 +148,7 @@ wind2 <- wind2 %>%
   mutate(group = c("2006 - 2040"))
 
 
-wind3 <- read_delim("dados/Eta_HadGEM2-ES_RCP8.5_2040_2070_W100_3h_P2.txt", 
+wind3 <- read_delim("dados_canems/Eta_CanESM2_RCP8.5_2040_2070_W100_3h_P2.txt", 
                     ";", escape_double = FALSE, col_names = FALSE, 
                     trim_ws = TRUE)
 wind3 <- wind3 %>% 
@@ -160,10 +160,10 @@ wind3 <- wind3 %>%
   mutate(group = c("2040 - 2070"))
 
 
-wind4 <- read_delim("dados/Eta_HadGEM2-ES_RCP8.5_2070_2099_W100_3h_P2.txt", 
+wind4 <- read_delim("dados_canems/Eta_CanESM2_RCP8.5_2070_2099_W100_3h_P2.txt", 
                     ";", escape_double = FALSE, col_names = FALSE, 
-  
-                                      trim_ws = TRUE)
+                    
+                    trim_ws = TRUE)
 wind4 <- wind4 %>% 
   mutate(date = ymd(substr(X1,1,8))) %>% 
   mutate(hour = substr(X1,9,10)) %>% 
@@ -226,7 +226,7 @@ weibull <- rbind(a,b,c) %>%
 
 ### local3 ----
 
-wind1 <- read_delim("dados/Eta_HadGEM2-ES_Hist_1960_2005_W100_3h_P3.txt", 
+wind1 <- read_delim("dados_canems/Eta_CanESM2_Hist_1960_2005_W100_3h_P3.txt", 
                     ";", escape_double = FALSE, col_names = FALSE, 
                     trim_ws = TRUE)
 
@@ -239,7 +239,7 @@ wind1 <- wind1 %>%
   mutate(group = c("1960 - 2006"))
 
 
-wind2 <- read_delim("dados/Eta_HadGEM2-ES_RCP8.5_2006_2040_W100_3h_P3.txt", 
+wind2 <- read_delim("dados_canems/Eta_CanESM2_RCP8.5_2006_2040_W100_3h_P3.txt", 
                     ";", escape_double = FALSE, col_names = FALSE, 
                     trim_ws = TRUE)
 wind2 <- wind2 %>% 
@@ -251,7 +251,7 @@ wind2 <- wind2 %>%
   mutate(group = c("2006 - 2040"))
 
 
-wind3 <- read_delim("dados/Eta_HadGEM2-ES_RCP8.5_2040_2070_W100_3h_P3.txt", 
+wind3 <- read_delim("dados_canems/Eta_CanESM2_RCP8.5_2040_2070_W100_3h_P3.txt", 
                     ";", escape_double = FALSE, col_names = FALSE, 
                     trim_ws = TRUE)
 wind3 <- wind3 %>% 
@@ -263,7 +263,7 @@ wind3 <- wind3 %>%
   mutate(group = c("2040 - 2070"))
 
 
-wind4 <- read_delim("dados/Eta_HadGEM2-ES_RCP8.5_2070_2099_W100_3h_P3.txt", 
+wind4 <- read_delim("dados_canems/Eta_CanESM2_RCP8.5_2040_2070_W100_3h_P3.txt", 
                     ";", escape_double = FALSE, col_names = FALSE, 
                     
                     trim_ws = TRUE)
@@ -332,7 +332,7 @@ weibull <- rbind(a,b,c) %>%
 
 ### local4 ----
 
-wind1 <- read_delim("dados/Eta_HadGEM2-ES_Hist_1960_2005_W100_3h_P4.txt", 
+wind1 <- read_delim("dados_canems/Eta_CanESM2_Hist_1960_2005_W100_3h_P4.txt", 
                     ";", escape_double = FALSE, col_names = FALSE, 
                     trim_ws = TRUE)
 
@@ -345,7 +345,7 @@ wind1 <- wind1 %>%
   mutate(group = c("1960 - 2006"))
 
 
-wind2 <- read_delim("dados/Eta_HadGEM2-ES_RCP8.5_2006_2040_W100_3h_P4.txt", 
+wind2 <- read_delim("dados_canems/Eta_CanESM2_RCP8.5_2006_2040_W100_3h_P4.txt", 
                     ";", escape_double = FALSE, col_names = FALSE, 
                     trim_ws = TRUE)
 wind2 <- wind2 %>% 
@@ -357,7 +357,7 @@ wind2 <- wind2 %>%
   mutate(group = c("2006 - 2040"))
 
 
-wind3 <- read_delim("dados/Eta_HadGEM2-ES_RCP8.5_2040_2070_W100_3h_P4.txt", 
+wind3 <- read_delim("dados_canems/Eta_CanESM2_RCP8.5_2040_2070_W100_3h_P4.txt", 
                     ";", escape_double = FALSE, col_names = FALSE, 
                     trim_ws = TRUE)
 wind3 <- wind3 %>% 
@@ -369,7 +369,7 @@ wind3 <- wind3 %>%
   mutate(group = c("2040 - 2070"))
 
 
-wind4 <- read_delim("dados/Eta_HadGEM2-ES_RCP8.5_2070_2099_W100_3h_P4.txt", 
+wind4 <- read_delim("dados_canems/Eta_CanESM2_RCP8.5_2070_2099_W100_3h_P4.txt", 
                     ";", escape_double = FALSE, col_names = FALSE, 
                     
                     trim_ws = TRUE)
